@@ -1,16 +1,71 @@
 <!DOCTYPEhtml>
 <html>
 <head>
+  
+  
 <title>Hello Cloud Social Dashboard!</title>
 <blockquote class="twitter-tweet" data-lang="en">
+@import 'compass/css3';
+
+body { background: #333; }
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 5px solid #3498db;
+    @include border-radius(50%);
+        
+    $count: 8;
+    @for $i from 1 through $count {
+      &:nth-child(#{$i}) {
+        @include animation(grow 3s #{(.5*$i)}s infinite ease-out);
+      }
+    }
+  }
+}
+
+@include keyframes(grow) {
+  100% {
+    padding: 200px;
+    border-color: #2ecc71;
+    margin: -200px 0 0 -200px;
+    opacity: 0;
+  }
+}
+    
+    
+</head>
+    
+    
+<body>
+    
 <p lang="en" dir="ltr">Enter now for your chance to win $1000 with <a href="https://twitter.com/MSFTImagine">@MSFTImagine</a> <a href="https://twitter.com/hashtag/HelloCloudSweepstakes?src=hash">#HelloCloudSweepstakes</a> by leveraging the power of <a href="https://twitter.com/hashtag/Azure?src=hash">#Azure</a>! <a href="https://t.co/9wsfbs7eFx">https://t.co/9wsfbs7eFx</a>
 </p>
 &mdash; Pablo (@IamPablo)
+    
 <a href="https://twitter.com/IamPablo/status/777728554347827200">
 September 19, 2016
 </a>
 </blockquote>
+    
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8">
 </script>
+
+  <div class="container">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+  
 </body>
 </html>
